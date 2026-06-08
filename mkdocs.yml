@@ -1,0 +1,61 @@
+site_name: "Hydra 初学者指南"
+site_description: "从零开始学习 Hydra 密码爆破工具，包含12个实验课件"
+site_author: "QClaw"
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: 切换深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: 切换浅色模式
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+nav:
+  - 首页: index.md
+  - "01 - 安装和验证 Hydra": "01_安装和验证Hydra/index.md"
+  - "02 - 验证 Hydra 安装情况": "02_验证Hydra安装情况/index.md"
+  - "03 - 学习 Hydra 基础命令": "03_学习Hydra基础命令/index.md"
+  - "04 - 破解新用户的 SSH 登录密码": "04_破解新用户的SSH登录密码/index.md"
+  - "05 - 使用 Hydra 攻击 HTTP 服务": "05_使用Hydra攻击HTTP服务/index.md"
+  - "06 - 破解隐藏服务": "06_破解隐藏服务/index.md"
+  - "07 - 使用 Hydra 攻击 FTP 服务": "07_使用Hydra攻击FTP服务/index.md"
+  - "08 - 使用自定义字典破解 FTP": "08_使用自定义字典破解FTP/index.md"
+  - "09 - 使用 Hydra 攻击 Telnet 服务": "09_使用Hydra攻击Telnet服务/index.md"
+  - "10 - 破解弱口令 Telnet 密码": "10_破解弱口令Telnet密码/index.md"
+  - "11 - 调整 Hydra 攻击速度和线程": "11_调整Hydra攻击速度和线程/index.md"
+  - "12 - 破解特工的弱 SSH 密码": "12_破解特工的弱SSH密码/index.md"
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - footnotes
+  - attr_list
+  - def_list
+  - tables
+  - toc:
+      permalink: true
