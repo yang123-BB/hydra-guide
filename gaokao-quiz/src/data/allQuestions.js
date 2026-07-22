@@ -226,8 +226,18 @@ export async function loadAllQuestions() {
   if (!_promise) {
     _promise = (async () => {
       // schoolMock 拆成 8 个 ~420KB 的小文件（避免单文件过大），并行加载后合并
-      const schoolImporters = Array.from({ length: 8 }, (_, i) =>
-        import(`./schoolMock.part${i + 1}.js`))
+      // 注意：必须用显式静态 import 让 Vite 在构建期解析出这 8 个 chunk，
+      // 模板字符串 import(`./schoolMock.part${i+1}.js`) 会被原样保留为运行时字符串，导致分片文件不被产出、运行时 404。
+      const schoolImporters = [
+        import('./schoolMock.part1.js'),
+        import('./schoolMock.part2.js'),
+        import('./schoolMock.part3.js'),
+        import('./schoolMock.part4.js'),
+        import('./schoolMock.part5.js'),
+        import('./schoolMock.part6.js'),
+        import('./schoolMock.part7.js'),
+        import('./schoolMock.part8.js'),
+      ]
       const [core, ...schoolParts] = await Promise.all([
         loadCore(),
         ...schoolImporters,
