@@ -1,0 +1,12 @@
+{
+  "total": 7131,
+  "bySubject": {
+    "math": 1315,
+    "physics": 1206,
+    "chemistry": 1190,
+    "biology": 1190,
+    "chinese": 1150,
+    "english": 1080
+  },
+  "generatedAt": "2026-07-21T12:38:40.608Z"
+}
